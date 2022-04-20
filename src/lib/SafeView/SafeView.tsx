@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import classes from './safe-view.module.css';
+import classes from './safe-view.css';
 
 export interface SafeViewProps {
   accessKey?: React.HTMLAttributes<HTMLButtonElement>['accessKey'];
@@ -15,7 +15,7 @@ export const SafeView: React.FC<SafeViewProps> = ({
   const [safeMode, setSafeMode] = useState(false);
 
   const classNames = useMemo(() => {
-    if (safeMode) return [classes['safe-mode'], className];
+    if (safeMode) return ['safe-mode', className];
     return [className];
   }, [safeMode]);
   return (

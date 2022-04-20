@@ -1,10 +1,12 @@
 {
   "name": "safeview",
-  "version": "0.0.1",
+  "description": "SafeView is a component that allows you to hide senstive information in your app visually.",
+  "version": "0.0.5",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "upload": "npm run build && npm publish"
   },
   "dependencies": {
     "react": "^16.8.0 || 17.x || 18.x",
@@ -34,5 +36,6 @@
       "import": "./dist/safeview.es.js",
       "require": "./dist/safeview.umd.js"
     }
-  }
+  },
+  "license": "MIT"
 }
