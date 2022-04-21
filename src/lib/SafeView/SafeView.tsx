@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import classes from './safe-view.css';
+import './safe-view.css';
 
 export interface SafeViewProps {
   accessKey?: React.HTMLAttributes<HTMLButtonElement>['accessKey'];
