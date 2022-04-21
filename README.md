@@ -24,7 +24,11 @@ A basic example of using the base component, all you need to do is import and th
 import SafeView from 'safeview';
 
 const App = () => {
-  return <SafeView>// Your React App</SafeView>;
+  return (
+        <SafeView>
+            // Your React App
+        </SafeView>;
+  )
 };
 ```
 
@@ -34,7 +38,7 @@ Specify which element you would like to hide with the property `data-safe="true"
 const MyComponent = () => {
     return (
         <div>
-            <span data-safe="true">
+            <span data-safe>
                 // Sensitive info
             <span>
         </div>
@@ -66,16 +70,8 @@ interface SafeViewProps {
 
 In order to specify to SafeView which element you would like to hide, you need to target it with the property `data-safe="true"`.
 
-```js
-const MyComponent = () => {
-    return (
-        <div>
-            <span data-safe="true">
-                // Sensitive info
-            <span>
-        </div>
-    )
-}
+```html
+<p data-safe>{ sensitive information }</p>
 ```
 
 # License
