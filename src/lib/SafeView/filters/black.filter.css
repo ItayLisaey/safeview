@@ -1,0 +1,4 @@
+.safe-mode *[data-safe] {
+    background-color: black;
+    color: black;
+}

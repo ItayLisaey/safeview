@@ -1,16 +1,28 @@
 import { useEffect, useMemo, useState } from 'react';
 import './safe-view.css';
-import styleText from './safe-view.css';
+import hiddenFilter from './filters/hidden.filter.css';
+import blurFilter from './filters/blur.filter.css';
+import blackFilter from './filters/black.filter.css';
+
+type Filters = 'hidden' | 'blur' | 'black';
+
+const filters: Record<Filters, string> = {
+  hidden: hiddenFilter,
+  blur: blurFilter,
+  black: blackFilter,
+};
 
 export interface SafeViewProps {
   accessKey?: string;
+  filter?: Filters;
   className?: string;
   children?: React.ReactNode;
 }
 
 export const SafeView: React.FC<SafeViewProps> = ({
   children,
-  accessKey,
+  filter = 'blur',
+  accessKey = 's',
   className,
 }) => {
   const [safeMode, setSafeMode] = useState(false);
@@ -21,8 +33,8 @@ export const SafeView: React.FC<SafeViewProps> = ({
   }, [safeMode]);
 
   const handleKeyPress = (e: KeyboardEvent) => {
-    const access = accessKey ? accessKey.toLowerCase()[0] : 's';
-    if (e.shiftKey && e.key.toLowerCase() === access) setSafeMode(!safeMode);
+    if (e.shiftKey && e.key.toLowerCase() === accessKey.toLowerCase()[0])
+      setSafeMode(!safeMode);
   };
 
   useEffect(() => {
@@ -35,12 +47,7 @@ export const SafeView: React.FC<SafeViewProps> = ({
   return (
     <>
       <div className={classNames.join(' ')}>{children}</div>
-      <div
-        hidden
-        dangerouslySetInnerHTML={{
-          __html: `<style>${styleText}</style>`,
-        }}
-      ></div>
+      <style>{filters[filter]}</style>
     </>
   );
 };

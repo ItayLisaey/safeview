@@ -1,0 +1,3 @@
+.safe-mode *[data-safe] {
+    display: none;
+}

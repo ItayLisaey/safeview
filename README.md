@@ -49,7 +49,9 @@ const MyComponent = () => {
 }
 ```
 
-After you mark the chosen elements you can press <kbd>Shift</kbd> + <kbd>S</kbd> on **Chrome** or <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> on **Firefox** to hide the elements.
+After you mark the chosen elements you can press <kbd>Shift</kbd> + <kbd>S</kbd> to filter them out.
+
+<kbd>S</kbd> is the default key, but you can change that in the component's props.
 
 # API
 
@@ -63,6 +65,9 @@ The `<SafeView>` component is the main element of the library and where you cont
 interface SafeViewProps {
   // Determines which the key will toggle the "SafeMode".
   accessKey?: React.HTMLAttributes<HTMLButtonElement>['accessKey']; // string
+
+  // Determines the filter applied on the targeted elements.
+  filter?: 'hidden' | 'blur' | 'black';
 
   // Allows you to insert a class to the div <SafeView> creates.
   className?: string;
