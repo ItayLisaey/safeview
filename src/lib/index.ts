@@ -1,1 +1,3 @@
-export { SafeView } from './SafeView';
+import { SafeView } from './SafeView';
+
+export default SafeView;
