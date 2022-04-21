@@ -1,20 +1,25 @@
-name: Publish SafeView
-
+name: Release
 on:
-  release:
-    types: [created]
-
+  push:
+    branches:
+      - main
 jobs:
-  publish-npm:
-    needs: build
+  release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org/
-      - run: npm build
-      - run: npm publish
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 'lts/*'
+      - name: Install dependencies
+        run: npm install
+      - name: Release
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN}}
+        run: npx semantic-release
