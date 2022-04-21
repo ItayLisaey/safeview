@@ -1,1 +1,1 @@
-trigger ci
+trigger ci, trigger minor
