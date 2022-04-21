@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
-import './safe-view.css';
+
+//============== Filters ==============
+
 import hiddenFilter from './filters/hidden.filter.css';
 import blurFilter from './filters/blur.filter.css';
 import blackFilter from './filters/black.filter.css';
@@ -11,6 +13,8 @@ const filters: Record<Filters, string> = {
   blur: blurFilter,
   black: blackFilter,
 };
+
+//============== Component ==============
 
 export interface SafeViewProps {
   accessKey?: string;
@@ -27,10 +31,14 @@ export const SafeView: React.FC<SafeViewProps> = ({
 }) => {
   const [safeMode, setSafeMode] = useState(false);
 
+  //------------ Classname changer -------------
+
   const classNames = useMemo(() => {
     if (safeMode) return ['safe-mode', className];
     return [className];
   }, [safeMode]);
+
+  // -------- Event Handlers --------
 
   const handleKeyPress = (e: KeyboardEvent) => {
     if (e.shiftKey && e.key.toLowerCase() === accessKey.toLowerCase()[0])
