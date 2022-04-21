@@ -41,6 +41,11 @@
       "require": "./dist/safeview.umd.js"
     }
   },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
   "license": "MIT",
   "keywords": [
     "react",
