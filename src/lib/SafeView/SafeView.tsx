@@ -1,8 +1,8 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import classes from './safe-view.module.css';
 
 export interface SafeViewProps {
-  accessKey?: React.HTMLAttributes<HTMLButtonElement>['accessKey'];
+  accessKey?: string;
   className?: string;
   children?: React.ReactNode;
 }
@@ -18,14 +18,22 @@ export const SafeView: React.FC<SafeViewProps> = ({
     if (safeMode) return [classes['safe-mode'], className];
     return [className];
   }, [safeMode]);
+
+  const handleKeyPress = (e: KeyboardEvent) => {
+    const access = accessKey ? accessKey.toLowerCase()[0] : 's';
+    if (e.shiftKey && e.key.toLowerCase() === access) setSafeMode(!safeMode);
+  };
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyPress);
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [handleKeyPress]);
+
   return (
     <>
       <div className={classNames.join(' ')}>{children}</div>
-      <button
-        accessKey={accessKey ?? 's'}
-        hidden
-        onClick={() => setSafeMode(!safeMode)}
-      ></button>
     </>
   );
 };
