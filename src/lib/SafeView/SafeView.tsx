@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
-import classes from './safe-view.module.css';
+import './safe-view.css';
+import styleText from './safe-view.css';
 
 export interface SafeViewProps {
   accessKey?: string;
@@ -15,7 +16,7 @@ export const SafeView: React.FC<SafeViewProps> = ({
   const [safeMode, setSafeMode] = useState(false);
 
   const classNames = useMemo(() => {
-    if (safeMode) return [classes['safe-mode'], className];
+    if (safeMode) return ['safe-mode', className];
     return [className];
   }, [safeMode]);
 
@@ -34,6 +35,12 @@ export const SafeView: React.FC<SafeViewProps> = ({
   return (
     <>
       <div className={classNames.join(' ')}>{children}</div>
+      <div
+        hidden
+        dangerouslySetInnerHTML={{
+          __html: `<style>${styleText}</style>`,
+        }}
+      ></div>
     </>
   );
 };
