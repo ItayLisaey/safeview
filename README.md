@@ -1,5 +1,8 @@
 # SafeView
 
+![package size badge](https://img.shields.io/bundlephobia/min/safeview) ![npm version](https://img.shields.io/npm/v/safeview)
+![github action build status](https://img.shields.io/github/workflow/status/itaylisaey/safeview/Release)
+
 SafeView is a component that allows you to hide sensitive information in your app visually, for presentation purposes, and more.
 
 # Installation
