@@ -39,5 +39,12 @@
       "require": "./dist/safeview.umd.js"
     }
   },
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "sensitive",
+    "typescript",
+    "safeview",
+    "react-component"
+  ]
 }
