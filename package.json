@@ -1,6 +1,8 @@
 {
   "name": "safeview",
   "description": "SafeView is a component that allows you to hide senstive information in your app visually.",
+  "author": "Itay Lisaey",
+  "repository": "https://github.com/ItayLisaey/safeview",
   "version": "0.0.5",
   "scripts": {
     "dev": "vite",
