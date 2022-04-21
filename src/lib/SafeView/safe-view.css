@@ -1,3 +1,7 @@
 .safe-mode *[data-safe] {
     filter: blur(.2rem);
 }
+
+.safe-mode {
+    background-color: aliceblue;
+}
