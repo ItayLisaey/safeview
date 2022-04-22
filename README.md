@@ -1,3 +1,5 @@
+![SafeView Header](https://github.com/itaylisaey/safeview/raw/master/media/safeview-repo-social.png)
+
 # SafeView
 
 ![package size badge](https://img.shields.io/bundlephobia/min/safeview) ![npm version](https://img.shields.io/npm/v/safeview)
