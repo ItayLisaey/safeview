@@ -1,4 +1,4 @@
-![SafeView Header](https://github.com/ItayLisaey/safeview/blob/main/media/saveview-repo-social.png?raw=true)
+![SafeView Header](https://github.com/ItayLisaey/safeview/blob/main/media/saveview-repo-cover.png?raw=true)
 
 # SafeView
 
