@@ -1,3 +1,15 @@
 .safe-mode *[data-safe] {
-    filter: blur(.3rem);
+    filter: blur(.3rem) !important;
+}
+
+.safe-mode *[data-safe]:hover {
+    filter: blur(.3rem) !important;
+}
+
+.safe-mode *[data-safe]:active {
+    filter: blur(.3rem) !important;
+}
+
+.safe-mode *[data-safe]:focus {
+    filter: blur(.3rem) !important;
 }

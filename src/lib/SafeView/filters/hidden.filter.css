@@ -1,3 +1,15 @@
 .safe-mode *[data-safe] {
-    display: none;
+    display: none !important;
+}
+
+.safe-mode *[data-safe]:hover {
+     display: none !important;
+}
+
+.safe-mode *[data-safe]:active {
+     display: none !important;
+}
+
+.safe-mode *[data-safe]:focus {
+     display: none !important;
 }
