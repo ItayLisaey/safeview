@@ -1,6 +1,7 @@
 .box {
-    background-color: lightblue;
     padding: 1rem;
     display: flex;
+    flex-direction: column;
+padding-inline: 20%;
     justify-content: center;
 }
