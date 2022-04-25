@@ -7,6 +7,8 @@
 
 SafeView is a component that allows you to hide sensitive information in your app visually, for presentation purposes, and more.
 
+![example gif](media/SafeView-Example.gif)
+
 # Installation
 
 with NPM:
